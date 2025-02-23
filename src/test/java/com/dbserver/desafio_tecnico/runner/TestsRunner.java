@@ -6,7 +6,7 @@ import org.junit.platform.suite.api.SelectPackages;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
-@SelectPackages("com.dbserver.desafio_tecnico.api_tests.tests")
+@SelectPackages("com.dbserver.desafio_tecnico.apitests.tests")
 @IncludeTags("todos")
 public class TestsRunner {
 

@@ -1,4 +1,4 @@
-name: Run Tests Allure Report and GitHub Pages.
+name: Run Testes JUnit e Pulicação Allure Report no GitHub Pages.
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    name: Rodar Testes JUnit
+    name: Pipeline de Testes JUnit
     runs-on: ubuntu-latest
 
     steps:

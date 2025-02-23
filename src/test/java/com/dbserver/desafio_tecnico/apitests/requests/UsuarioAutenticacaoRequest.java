@@ -1,6 +1,6 @@
-package com.dbserver.desafio_tecnico.api_tests.requests;
+package com.dbserver.desafio_tecnico.apitests.requests;
 
-import com.dbserver.desafio_tecnico.utils.Utils;
+import com.dbserver.desafio_tecnico.utils.UrlsUtils;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 public class UsuarioAutenticacaoRequest {
 
     @Autowired
-    Utils util;
+    UrlsUtils util;
 
     @Step("Buscar usuário para autenticação")
     public Response getUsuario(){

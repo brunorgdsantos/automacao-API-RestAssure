@@ -1,6 +1,6 @@
-package com.dbserver.desafio_tecnico.api_tests.requests;
+package com.dbserver.desafio_tecnico.apitests.requests;
 
-import com.dbserver.desafio_tecnico.utils.Utils;
+import com.dbserver.desafio_tecnico.utils.UrlsUtils;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,14 +8,17 @@ import org.springframework.stereotype.Component;
 import static io.restassured.RestAssured.given;
 
 @Component
-public class BuscarProdutosRequest {
-    @Autowired
-    Utils util;
+public class StatusAplicacaoRequest {
 
-    @Step("Buscar todos os produtos")
-    public Response buscaProdutos(){
+    @Autowired
+    UrlsUtils util;
+
+    @Step("Buscar o status da aplicação")
+    public Response getStatus(){
         return given()
                 .when()
-                .get(util.getBUSCA_PROD_URL());
+                .get(util.getTEST_URL());
+
     }
+
 }
