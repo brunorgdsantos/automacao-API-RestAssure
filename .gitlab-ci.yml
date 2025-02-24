@@ -30,13 +30,25 @@ allure_report:
   stage: report
   script:
     - mvn allure:report
-    - mv target/allure-report public
   dependencies:
     - test
   artifacts:
     paths:
       - target/allure-report
     expire_in: 23 hours
+  only:
+    - main
+    - develop
+
+allure_report_pages:
+  image: node:16
+  stage: deploy
+  script:
+    - mvn allure:report
+    - mv target/allure-report public
+  artifacts:
+    paths:
+      - public
   only:
     - main
     - develop
