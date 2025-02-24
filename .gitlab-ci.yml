@@ -47,7 +47,7 @@ allure_report_pages:
     - test
   script:
     - mvn allure:report
-    - mv target/allure-results public
+    - mv target/site/allure-maven-plugin public
   artifacts:
     paths:
       - public
