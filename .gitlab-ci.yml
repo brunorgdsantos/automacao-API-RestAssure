@@ -43,6 +43,8 @@ allure_report:
 allure_report_pages:
   image: maven:3.9.6-eclipse-temurin-17
   stage: deploy
+  dependencies:
+    - test
   script:
     - mvn allure:report
     - mv target/allure-report public
