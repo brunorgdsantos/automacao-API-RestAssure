@@ -42,7 +42,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Build and exec tests with Maven
-        run: mvn test -Dgroups=todos -Denv=prd
+        run: mvn test
         continue-on-error: true
 
       - name: Get allure history

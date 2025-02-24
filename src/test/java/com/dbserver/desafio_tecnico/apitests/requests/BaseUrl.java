@@ -10,7 +10,7 @@ public class BaseUrl {
 
     @BeforeAll
     public static void setUp() {
-        log.info("Iniciando os testes de API.");
+        log.info("Iniciando Testes Api Gerenciador de Produtos Eletrônicos.");
         RestAssured.baseURI = UrlsUtils.baseUrl();
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
     }
