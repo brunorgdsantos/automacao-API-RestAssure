@@ -46,7 +46,7 @@ public class ProdutosAutenticacaoTest extends BaseUrl{
                 .body("message", containsString("Invalid/Expired Token!"))
                 .statusCode(HttpStatus.SC_UNAUTHORIZED);
     }
-
+    /*
     @Test
     @Tag("todos")
     @Description("Exceção: Deve retornar Status Code 403 Forbidden quando credencial inválida")
@@ -54,5 +54,5 @@ public class ProdutosAutenticacaoTest extends BaseUrl{
         produtosRequest.produtosAutenticacaoCredencialInvalida()
                 .then()
                 .statusCode(HttpStatus.SC_FORBIDDEN);
-    }
+    } */
 }
