@@ -55,7 +55,7 @@ jobs:
       - name: Allure Report action
         uses: simple-elf/allure-report-action@master
         with:
-          allure_results: target/allure-results
+          allure_results: target/site/allure-maven-plugin
           allure_history: allure-history/allure-history
           keep_reports: 5
 
