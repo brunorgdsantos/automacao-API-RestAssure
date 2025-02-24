@@ -19,7 +19,7 @@ public class ProdutosAutenticacaoTest extends BaseUrl{
     ProdutosAutenticacaoRequest produtosRequest;
 
     @Test
-    @Tag("todos")
+    @Tag("TestesProdutosEletronicosApi")
     @Description("Deve buscar produtos com autenticação (GET /auth/products)")
     public void deveBuscarProdutosAutenticacao() throws Exception{
         produtosRequest.produtosAutenticacao()
@@ -28,7 +28,7 @@ public class ProdutosAutenticacaoTest extends BaseUrl{
     }
 
     @Test
-    @Tag("todos")
+    @Tag("TestesProdutosEletronicosApi")
     @Description("Exceção: Deve retornar Status Code 401 Unauthorized: Token Expired quando token inválido")
     public void naoDeveBuscarProdutosAutenticacaoTokenExpirado() throws Exception{
         produtosRequest.produtosAutenticacaoTokenExpired()
@@ -38,7 +38,7 @@ public class ProdutosAutenticacaoTest extends BaseUrl{
     }
 
     @Test
-    @Tag("todos")
+    @Tag("TestesProdutosEletronicosApi")
     @Description("Exceção: Deve retornar Status Code 401 Unauthorized: Invalid/Expired Token quando token inválido")
     public void naoDeveBuscarProdutosAutenticacaoTokenInvalido() throws Exception{
         produtosRequest.produtosAutenticacaoTokenInvalido()
@@ -46,13 +46,14 @@ public class ProdutosAutenticacaoTest extends BaseUrl{
                 .body("message", containsString("Invalid/Expired Token!"))
                 .statusCode(HttpStatus.SC_UNAUTHORIZED);
     }
-    /*
+
     @Test
-    @Tag("todos")
-    @Description("Exceção: Deve retornar Status Code 403 Forbidden quando credencial inválida")
-    public void naoDeveBuscarProdutosAutenticacaoCredencialInvalida() throws Exception{
-        produtosRequest.produtosAutenticacaoCredencialInvalida()
+    @Tag("TestesProdutosEletronicosApi")
+    @Description("Exceção: Deve retornar Status Code 401 Unauthorized: Access Token is required quando token não enviado")
+    public void naoDeveBuscarProdutosAutenticacaoQuandoTokenNaoEnviado() throws Exception{
+        produtosRequest.produtosAutenticacaoTokenNaoEnviado()
                 .then()
-                .statusCode(HttpStatus.SC_FORBIDDEN);
-    } */
+                .body("message", containsString("Access Token is required"))
+                .statusCode(HttpStatus.SC_UNAUTHORIZED);
+    }
 }

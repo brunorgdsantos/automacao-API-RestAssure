@@ -3,7 +3,7 @@
 mvn clean test
 
 if [ $? -eq 0 ]; then
-    echo "Todos os testes passaram. Realizando o push para o GitHub e GitLab..."
+    echo "Todos os testes passaram! Realizando push para o GitHub e GitLab Simultaneamente."
 
     git add .
 

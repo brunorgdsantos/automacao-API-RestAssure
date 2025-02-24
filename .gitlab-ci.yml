@@ -1,0 +1,22 @@
+image: maven:3.8.6-openjdk-17
+
+stages:
+  - test
+
+cache:
+  paths:
+    - .m2/repository/
+
+test:
+  stage: test
+  script:
+    - mvn clean test
+  artifacts:
+    when: always
+    paths:
+      - target/surefire-reports/
+    reports:
+      junit: target/surefire-reports/*.xml
+  only:
+    - main
+    - develop

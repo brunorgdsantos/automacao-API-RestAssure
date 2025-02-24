@@ -44,10 +44,10 @@ public class ProdutosAutenticacaoRequest {
                 .get(util.getAUTH_PROD_URL());
     }
 
-    public Response produtosAutenticacaoCredencialInvalida(){
+    public Response produtosAutenticacaoTokenNaoEnviado(){
         return given()
                 .header("Content-Type", "application/json")
-                //.header("Authorization", "Bearer %s")
+                .header("Authorization", "")
                 .when()
                 .get(util.getAUTH_PROD_URL());
     }

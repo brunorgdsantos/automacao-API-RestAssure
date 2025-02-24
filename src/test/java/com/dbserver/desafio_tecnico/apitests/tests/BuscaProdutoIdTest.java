@@ -17,7 +17,7 @@ public class BuscaProdutoIdTest extends BaseUrl {
     BuscarProdutoIdRequest produtosIdRequest;
 
     @Test
-    @Tag("todos")
+    @Tag("TestesProdutosEletronicosApi")
     @Description("Deve buscar apenas um produto por id (POST /products/{id})")
     public void deveBuscarProdutoId() throws Exception{
         produtosIdRequest.buscaProdutosId(1)
@@ -26,7 +26,7 @@ public class BuscaProdutoIdTest extends BaseUrl {
     }
 
     @Test
-    @Tag("todos")
+    @Tag("TestesProdutosEletronicosApi")
     @Description("Exceção: Deve retornar Status Code 404 Not found para Id não cadastrado")
     public void deveRetornarErroProdutoIdNaoCadastrado() throws Exception{
         produtosIdRequest.buscaProdutosId(255)

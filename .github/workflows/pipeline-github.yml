@@ -1,4 +1,4 @@
-name: Run Testes JUnit e Publicação Allure Report no GitHub Pages
+name: Pipeline Testes JUnit e Publicação Allure Report no GitHub Pages
 
 on:
   push:
