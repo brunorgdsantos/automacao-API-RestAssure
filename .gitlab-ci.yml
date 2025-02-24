@@ -2,6 +2,7 @@ image: maven:3.9.6-eclipse-temurin-17
 
 stages:
   - test
+  - report
 
 cache:
   paths:
@@ -11,12 +12,42 @@ test:
   stage: test
   script:
     - mvn clean test
+    - mvn allure:report
   artifacts:
     when: always
     paths:
       - target/surefire-reports/
+      - target/allure-results
     reports:
       junit: target/surefire-reports/*.xml
+  only:
+    - main
+    - develop
+
+allure_report:
+  image: maven:3.6.3-jdk-8
+  stage: report
+  script:
+    - mvn allure:serve
+  dependencies:
+    - test
+  artifacts:
+    paths:
+      - target/allure-report
+    expire_in: 23 hours
+  only:
+    - main
+    - develop
+
+allure_report_pages:
+  image: node:16
+  stage: deploy
+  script:
+    - mvn allure:report
+    - mv target/allure-report public
+  artifacts:
+    paths:
+      - public
   only:
     - main
     - develop

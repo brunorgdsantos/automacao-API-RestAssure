@@ -28,6 +28,7 @@ public class ProdutosAutenticacaoRequest {
                 .get(util.getAUTH_PROD_URL());
     }
 
+    @Step("Buscar produtos token expirado")
     public Response produtosAutenticacaoTokenExpired(){
         return given()
                 .header("Content-Type", "application/json")
@@ -36,6 +37,7 @@ public class ProdutosAutenticacaoRequest {
                 .get(util.getAUTH_PROD_URL());
     }
 
+    @Step("Buscar produtos token inválido")
     public Response produtosAutenticacaoTokenInvalido(){
         return given()
                 .header("Content-Type", "application/json")
@@ -44,6 +46,7 @@ public class ProdutosAutenticacaoRequest {
                 .get(util.getAUTH_PROD_URL());
     }
 
+    @Step("Buscar produtos token não enviado")
     public Response produtosAutenticacaoTokenNaoEnviado(){
         return given()
                 .header("Content-Type", "application/json")

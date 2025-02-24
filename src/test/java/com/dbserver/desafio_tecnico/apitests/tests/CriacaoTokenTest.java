@@ -17,7 +17,7 @@ public class CriacaoTokenTest extends BaseUrl {
     CriacaoTokenRequest tokenRequest;
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve criar um token para Autenticação (POST /auth/login)")
     public void deveCriarTokenAutenticacao() throws Exception{
         tokenRequest.criarToken("emilys", "emilyspass")
@@ -28,8 +28,8 @@ public class CriacaoTokenTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
-    @Description("Deve validar login para usuário válido ")
+    @Tag("ApiTests")
+    @Description("Deve validar login para usuário válido")
     public void deveRealizarLogin() throws Exception{
         tokenRequest.criarToken("emilys", "emilyspass")
                 .then()
@@ -39,7 +39,7 @@ public class CriacaoTokenTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Exceção: Deve retornar status code 200 ao criar um token")
     public void deveRetornarStatus200() throws Exception{
         tokenRequest.criarToken("emilys", "emilyspass")
@@ -48,8 +48,8 @@ public class CriacaoTokenTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
-    @Description("Exceção: Deve retorar status code 400 para login com usuário inválido ")
+    @Tag("ApiTests")
+    @Description("Exceção: Deve retorar status code 400 para login com usuário inválido")
     public void naoDeveRealizarLoginUsuarioInvalido() throws Exception{
         tokenRequest.criarToken("teste", "teste")
                 .then()
@@ -60,7 +60,7 @@ public class CriacaoTokenTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Exceção: Deve retorar status code 400 para login apenas com username válido")
     public void naoDeveRealizarLoginPasswordInvalido() throws Exception{
         tokenRequest.criarToken("emilys", "teste")

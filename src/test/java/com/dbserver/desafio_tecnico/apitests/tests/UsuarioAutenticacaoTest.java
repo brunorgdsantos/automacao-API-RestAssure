@@ -17,7 +17,7 @@ public class UsuarioAutenticacaoTest extends BaseUrl {
     UsuarioAutenticacaoRequest usuarioAutenticacaoRequest;
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve buscar usuário para autenticação (GET /users)")
     public void deveBuscarUsuarioAutenticacao() throws Exception{
         usuarioAutenticacaoRequest.getUsuario()
@@ -27,7 +27,7 @@ public class UsuarioAutenticacaoTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve buscar company name")
     public void deveBuscarCompanyName() throws Exception{
         usuarioAutenticacaoRequest.getUsuario()
@@ -37,7 +37,7 @@ public class UsuarioAutenticacaoTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve buscar card type")
     public void deveBuscarCardType() throws Exception{
         usuarioAutenticacaoRequest.getUsuario()
@@ -47,7 +47,7 @@ public class UsuarioAutenticacaoTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Exceção: Deve buscar outro usuário para autenticação")
     public void deveBuscarOutroUsuarioAutenticacaoExcecao() throws Exception{
         usuarioAutenticacaoRequest.getUsuario()

@@ -17,7 +17,7 @@ public class CriacaoProdutosTest extends BaseUrl {
     CriacaoProdutosRequest produtosRequest;
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve criar produto (POST /products/add)")
     public void deveCriarProduto() throws Exception{
         produtosRequest.criarProdutos()
@@ -26,7 +26,7 @@ public class CriacaoProdutosTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve validar características do produto")
     public void deveValidarProduto() throws Exception{
         produtosRequest.criarProdutos()
@@ -43,7 +43,7 @@ public class CriacaoProdutosTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve criar produto com título")
     public void deveCriarProdutoComTitulo() throws Exception{
         produtosRequest.criarProdutosComTitulo()
@@ -53,8 +53,8 @@ public class CriacaoProdutosTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
-    @Description("Exceção: Deve validar diferença no id do produto ")
+    @Tag("ApiTests")
+    @Description("Exceção: Deve validar diferença no id do produto")
     public void deveValidarDiferencaIdProduto() throws Exception{
         produtosRequest.criarProdutos()
                 .then()

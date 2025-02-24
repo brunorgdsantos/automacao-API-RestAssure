@@ -29,6 +29,7 @@ public class CriacaoProdutosRequest {
                 .post(util.getPROD_URL());
     }
 
+    @Step("Criação de produto com título")
     public Response criarProdutosComTitulo() throws IOException {
         return given()
                 .header("Content-Type", "application/json")

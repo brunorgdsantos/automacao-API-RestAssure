@@ -19,7 +19,7 @@ public class ProdutosAutenticacaoTest extends BaseUrl{
     ProdutosAutenticacaoRequest produtosRequest;
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve buscar produtos com autenticação (GET /auth/products)")
     public void deveBuscarProdutosAutenticacao() throws Exception{
         produtosRequest.produtosAutenticacao()
@@ -28,7 +28,7 @@ public class ProdutosAutenticacaoTest extends BaseUrl{
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Exceção: Deve retornar Status Code 401 Unauthorized: Token Expired quando token inválido")
     public void naoDeveBuscarProdutosAutenticacaoTokenExpirado() throws Exception{
         produtosRequest.produtosAutenticacaoTokenExpired()
@@ -38,7 +38,7 @@ public class ProdutosAutenticacaoTest extends BaseUrl{
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Exceção: Deve retornar Status Code 401 Unauthorized: Invalid/Expired Token quando token inválido")
     public void naoDeveBuscarProdutosAutenticacaoTokenInvalido() throws Exception{
         produtosRequest.produtosAutenticacaoTokenInvalido()
@@ -48,7 +48,7 @@ public class ProdutosAutenticacaoTest extends BaseUrl{
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Exceção: Deve retornar Status Code 401 Unauthorized: Access Token is required quando token não enviado")
     public void naoDeveBuscarProdutosAutenticacaoQuandoTokenNaoEnviado() throws Exception{
         produtosRequest.produtosAutenticacaoTokenNaoEnviado()

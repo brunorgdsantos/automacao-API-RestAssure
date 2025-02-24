@@ -17,7 +17,7 @@ public class StatusAplicacaoTest extends BaseUrl {
     StatusAplicacaoRequest statusRequest;
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve buscar o status da aplicação (GET /test)")
     public void deveBuscarStatusAplicacao() throws Exception{
         statusRequest.getStatus()

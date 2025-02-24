@@ -18,7 +18,7 @@ public class BuscarProdutosTest extends BaseUrl {
     BuscarProdutosRequest produtosRequest;
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve buscar todos os produtos (GET /products)")
     public void deveBuscarProdutos() throws Exception{
         produtosRequest.buscaProdutos()
@@ -27,7 +27,7 @@ public class BuscarProdutosTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve verificar campos do produto Id:30")
     public void deveVerificarProdutos() throws Exception{
         produtosRequest.buscaProdutos()
@@ -40,7 +40,7 @@ public class BuscarProdutosTest extends BaseUrl {
     }
 
     @Test
-    @Tag("TestesProdutosEletronicosApi")
+    @Tag("ApiTests")
     @Description("Deve validar estoque total de produtos")
     public void deveValidarTotalProdutos() throws Exception{
         produtosRequest.buscaProdutos()
