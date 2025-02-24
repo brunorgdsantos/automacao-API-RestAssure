@@ -41,7 +41,7 @@ allure_report:
     - develop
 
 allure_report_pages:
-  image: node:16
+  image: maven:3.9.6-eclipse-temurin-17
   stage: deploy
   script:
     - mvn allure:report
