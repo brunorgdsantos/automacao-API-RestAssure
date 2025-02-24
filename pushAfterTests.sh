@@ -9,7 +9,7 @@ if [ $? -eq 0 ]; then
 
     git commit -m "Alterações após execução de testes"
 
-    git push origin --all main
+    git push origin --all
 else
     echo "Testes falharam. Não será realizado o push."
 fi
