@@ -48,7 +48,7 @@ public class UsuarioAutenticacaoTest extends BaseUrl {
 
     @Test
     @Tag("todos")
-    @Description("Exceção: Deve buscar outro usuário para autenticação (GET /users)")
+    @Description("Exceção: Deve buscar outro usuário para autenticação")
     public void deveBuscarOutroUsuarioAutenticacaoExcecao() throws Exception{
         usuarioAutenticacaoRequest.getUsuario()
                 .then()
