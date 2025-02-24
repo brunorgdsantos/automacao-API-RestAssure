@@ -29,26 +29,14 @@ allure_report:
   image: maven:3.6.3-jdk-8
   stage: report
   script:
-    - mvn allure:serve
+    - mvn allure:report
+    - mv target/allure-report public
   dependencies:
     - test
   artifacts:
     paths:
       - target/allure-report
     expire_in: 23 hours
-  only:
-    - main
-    - develop
-
-allure_report_pages:
-  image: node:16
-  stage: deploy
-  script:
-    - mvn allure:report
-    - mv target/allure-report public
-  artifacts:
-    paths:
-      - public
   only:
     - main
     - develop
