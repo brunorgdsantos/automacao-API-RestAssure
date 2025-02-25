@@ -58,4 +58,7 @@ Os endpoints listados a seguir apresentam divergências ou inconsistências em r
 - **[GET /auth/products]** - Há muitos campos sendo retornados nas respostas da API que, aparentemente, não deveriam ser exibidos de acordo com a documentação. Campos a saber: *weight*, *dimensions*, *warrantyInformation*, *availabilityStatus*, *reviews*, *sku*, *returnPolicy*, *minimumOrderQuantity*, *meta*, dentro outros. Da mesma forma, não foi identificado nenhum cenário em que o *Response - 403 Forbidden* seja retornado. Portanto, é necessário verificar em qual situação essa resposta deveria ocorrer.
 - **[POST /products/add]** - O campo *discountPercentage* está presente no body do response, porém, de acordo com a documentação, ele não deveria ser exibido.
 - **[GET /products/{id}]** - O campo *meta.qrCode* está retornando informações diferentes quando comparado à documentação para o produto de *id:1*.
+
+## Melhorias
+<p>Há divergências entre a documentação e os campos retornados nos responses da API. Ou seja, muitos dos endpoints testados apresentam divergências ou inconsistências em relação aos requisitos documentados da API. Portanto, é recomendável repassar os resultados dos testes com o time de desenvolvimento e produto para possíveis alinhamentos e a criação de subtarefas de correção de bugs. Da mesma forma, a análise dos requisitos deve ser verificada com mais frequência para evitar problemas futuros.</p>
  
