@@ -13,5 +13,5 @@ if [ $? -eq 0 ]; then
 
     git push origin --all
 else
-    echo "Testes falharam. Push não realizado"
+    echo "Testes falharam! Push não realizado"
 fi
