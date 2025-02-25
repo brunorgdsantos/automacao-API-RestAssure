@@ -14,38 +14,38 @@
 - [Docker](https://www.docker.com/)
 
 ## Como executar os testes
-<p>Os testes podem ser iniciados executando o comando abaixo no terminal da IDE:</p>
+Os testes podem ser iniciados executando o comando abaixo no terminal da IDE:
 
 ```java
     mvn clean test
 ```
-<p>Os testes também podem ser iniciados executando a classe TestsRunner ao clicar no botão de execução da própria IDE.</p>
+Os testes também podem ser iniciados executando a classe TestsRunner ao clicar no botão de execução da própria IDE.
 
 ## Relatório de testes
-<p>Os relatórios com os resultados de testes estão sendo gerados de forma automática pelo Allure Report, para exibi-los basta executar o comando abaixo no terminal da IDE:</p>
+Os relatórios com os resultados de testes estão sendo gerados de forma automática pelo Allure Report, para exibi-los basta executar o comando abaixo no terminal da IDE:
 
 ```java
     mvn allure:serve
 ```
 
-<p>Da mesma maneira, foi adicionada uma etapa (job) na pipeline para publicar os relatórios de testes do Allure no GitLab Pages sempre que um push for feito na branch main, conforme as evidências a seguir:</p>
+Da mesma maneira, foi adicionada uma etapa (job) na pipeline para publicar os relatórios de testes do Allure no GitLab Pages sempre que um push for feito na branch main, conforme as evidências a seguir:
 
 - [Relatório](https://brunorgdsantos.gitlab.io/-/db-server-desafio-tecnico-2025/-/jobs/9232825581/artifacts/public/index.html)
 
 - [Job Pipeline](https://gitlab.com/brunorgdsantos/db-server-desafio-tecnico-2025/-/pipelines/1686817908)
   
-<p>É importante ressaltar que apenas pessoas autorizadas podem visualizar as informações acima, uma vez que o repositório está configurado como privado.</p>
+É importante ressaltar que apenas pessoas autorizadas podem visualizar as informações acima, uma vez que o repositório está configurado como privado.
 
 ## Integrações CI
-<p>A seguinte automação de testes foi desenvolvida com duas pipelines de execução automática, sendo uma delas na própria pipeline do GitLab, denominada tests, conforme ilustrado na imagem abaixo:</p>
+A seguinte automação de testes foi desenvolvida com duas pipelines de execução automática, sendo uma delas na própria pipeline do GitLab, denominada tests, conforme ilustrado na imagem abaixo:
 
 - [Job GitLab Pipeline](https://gitlab.com/brunorgdsantos/db-server-desafio-tecnico-2025/-/pipelines/1686817908)
 
-<p>A outra integração é realizada pelo Jenkins, e ambos executam os testes utilizando o JUnit:</p>
+A outra integração é realizada pelo Jenkins, e ambos executam os testes utilizando o JUnit:
 
 - [Jenkins](https://drive.google.com/file/d/12EtrQ-MfQwShXnY7dpax9NuqT2s143Hc/view?usp=sharing)
 
-<p>É importante destacar que apenas uma das duas opções é suficiente, porém, ambas foram implementadas nesta automação apenas para fins de conhecimento</p>
+É importante destacar que apenas uma das duas opções é suficiente, porém, ambas foram implementadas nesta automação apenas para fins de conhecimento
 
 ## Plano de teste e estratégia de testes
 Para o plano de testes tivemos como objetivo validar a API de gerenciamento de produtos eletrônicos. Para isso, foram validados os seus principais endpoints (GET /test, GET /users, POST /auth/login, GET /auth/products, POST /products/add, GET /products, GET /products/{id}), realizando testes nas requests/responses e comparando-as com a documentação, a fim de verificar se estavam conforme os requisitos esperados. Inicialmente, foi utilizado o Postman para testes manuais e, posteriormente, foi adotado o RestAssured com JUnit para a execução de testes automáticos. Por último, foram configuradas pipelines para a execução automática dos testes. Dessa forma, os endpoints que estavam de acordo com a documentação foram considerados como testes aprovados, enquanto aqueles que apresentavam inconsistências em relação aos requisitos definidos foram considerados como testes falhos. A cobertura funcional dos cenários, incluindo fluxos de exceção também foram validados. Todos esses processos de testes foram desenvolvidos para garantir que a aplicação está funcionando corretamente de acordo com a [documentação](https://sicredi-desafio-qe.readme.io/reference/get-test) .
@@ -60,5 +60,5 @@ Os endpoints listados a seguir apresentam divergências ou inconsistências em r
 - **[GET /products/{id}]** - O campo *meta.qrCode* está retornando informações diferentes quando comparado à documentação para o produto de *id:1*.
 
 ## Melhorias
-<p>Há divergências entre a documentação e os campos retornados nos responses da API. Ou seja, muitos dos endpoints testados apresentam divergências ou inconsistências em relação aos requisitos documentados da API. Portanto, é recomendável repassar os resultados dos testes com o time de desenvolvimento e produto para possíveis alinhamentos e a criação de subtarefas de correção de bugs. Da mesma forma, a análise dos requisitos deve ser verificada com mais frequência para evitar problemas futuros.</p>
+Há divergências entre a documentação e os campos retornados nos responses da API. Ou seja, muitos dos endpoints testados apresentam divergências ou inconsistências em relação aos requisitos documentados da API. Portanto, é recomendável repassar os resultados dos testes com o time de desenvolvimento e produto para possíveis alinhamentos e a criação de subtarefas de correção de bugs. Da mesma forma, a análise dos requisitos deve ser verificada com mais frequência para evitar problemas futuros.
  
