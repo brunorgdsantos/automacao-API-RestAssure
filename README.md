@@ -1,6 +1,6 @@
 <h1 align="center">Testes API Gerenciador Produtos Eletrônicos</h1>
 
-<p>Automação de testes de API criada para o desafio técnico DBServer</p>
+<p>Automação de testes de API criada para o desafio técnico do DBServer</p>
 
 ## Tecnologias utilizadas
 - [Java](https://www.java.com/pt-BR/)
@@ -22,7 +22,7 @@
 <p>Os testes também podem ser iniciados executando a classe TestsRunner ao clicar no botão de execução da própria IDE.</p>
 
 ## Relatório de testes
-<p>Os relatórios de testes estão sendo gerados de forma automática pelo Allure Report, para exibi-los basta executar o comando abaixo no terminal da IDE:</p>
+<p>Os relatórios com os resultados de testes estão sendo gerados de forma automática pelo Allure Report, para exibi-los basta executar o comando abaixo no terminal da IDE:</p>
 
 ```java
     mvn allure:report
@@ -32,12 +32,12 @@
 
 - [Relatório](https://brunorgdsantos.gitlab.io/-/db-server-desafio-tecnico-2025/-/jobs/9232825581/artifacts/public/index.html)
 
-- [Job](https://gitlab.com/brunorgdsantos/db-server-desafio-tecnico-2025/-/pipelines/1686817908)
+- [Job Pipeline](https://gitlab.com/brunorgdsantos/db-server-desafio-tecnico-2025/-/pipelines/1686817908)
   
 <p>É importante ressaltar que apenas pessoas autorizadas podem visualizar as informações acima, uma vez que o repositório está configurado como privado.</p>
 
-## Integrações
-<p>A automação de testes a seguir foi desenvolvida com duas pipelines de execução automática, sendo uma delas na própria pipeline do GitLab, denominada tests, conforme ilustrado na imagem abaixo:</p>
+## Integrações CI
+<p>A seguinte automação de testes foi desenvolvida com duas pipelines de execução automática, sendo uma delas na própria pipeline do GitLab, denominada tests, conforme ilustrado na imagem abaixo:</p>
 
 - [Job GitLab Pipeline](https://gitlab.com/brunorgdsantos/db-server-desafio-tecnico-2025/-/pipelines/1686817908)
 
@@ -48,4 +48,10 @@
 <p>É importante destacar que apenas uma das duas opções é suficiente, porém, ambas foram implementadas nesta automação apenas para fins de conhecimento</p>
 
 ## Plano de teste e estratégia de testes
-<p>Para o plano de testes teremos como objetivo validar a API de gerenciamento de produtos eletrônicos. Para isso, cobriremos os seus principais endpoints (GET /test, GET /users, POST /auth/login, GET /auth/products, POST /products/add, GET /products, GET /products/{id}), realizando testes nas requests/responses e comparando-as com a documentação, a fim de verificar se estão conforme os requisitos esperados. Inicialmente, utilizaremos o Postman para testes manuais e, posteriormente, adotaremos o RestAssured com JUnit para a execução de testes automáticos. Por último, serão configuradas pipelines para a execução automática dos testes. O teste a ser implementado será de regressão. Além disso, os endpoints que estiverem de acordo com a documentação serão considerados como testes aprovados, enquanto aqueles que apresentarem inconsistências em relação aos requisitos definidos serão considerados como testes falhos.</p>
+<p>Para o plano de testes teremos como objetivo validar a API de gerenciamento de produtos eletrônicos. Para isso, cobriremos os seus principais endpoints (GET /test, GET /users, POST /auth/login, GET /auth/products, POST /products/add, GET /products, GET /products/{id}), realizando testes nas requests/responses e comparando-as com a documentação, a fim de verificar se estão conforme os requisitos esperados. Inicialmente, utilizaremos o Postman para testes manuais e, posteriormente, adotaremos o RestAssured com JUnit para a execução de testes automáticos. Por último, serão configuradas pipelines para a execução automática dos testes. O teste a ser implementado será de regressão. Dessa forma, os endpoints que estiverem de acordo com a documentação serão considerados como testes aprovados, enquanto aqueles que apresentarem inconsistências em relação aos requisitos definidos serão considerados como testes falhos. Todos esses processos de testes serão desenvolvidos para garantir que a aplicação está funcionando corretamente de acordo com a documentação.</p>
+
+## Bugs
+<p>Os endpoints listados a seguir apresentam divergências ou inconsistências em relação aos requisitos apresentados na documentação da API. Portanto, é recomendável realizar uma análise com o time de desenvolvimento e produto para possíveis alinhamentos e a criação de subtarefas de correção de bugs ao longo da sprint:</p>
+
+- [Get] Apresenta divergência em cam
+ 
