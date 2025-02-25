@@ -37,11 +37,11 @@
 <p>É importante ressaltar que apenas pessoas autorizadas podem visualizar as informações acima, uma vez que o repositório está configurado como privado.</p>
 
 ## Integrações
-<p>A automação de testes a seguir foi desenvolvida com duas pipelines de execução automática, sendo uma delas na própria pipeline do GitLab, denominada tests, conforme ilustrado na imagem abaixo.</p>
+<p>A automação de testes a seguir foi desenvolvida com duas pipelines de execução automática, sendo uma delas na própria pipeline do GitLab, denominada tests, conforme ilustrado na imagem abaixo:</p>
 
 - [Job GitLab Pipeline](https://gitlab.com/brunorgdsantos/db-server-desafio-tecnico-2025/-/pipelines/1686817908)
 
-<p>A outra integração é realizada pelo Jenkins, e ambos executam os testes utilizando o JUnit.</p>
+<p>A outra integração é realizada pelo Jenkins, e ambos executam os testes utilizando o JUnit:</p>
 
 - [Jenkins](https://drive.google.com/file/d/12EtrQ-MfQwShXnY7dpax9NuqT2s143Hc/view?usp=sharing)
 
