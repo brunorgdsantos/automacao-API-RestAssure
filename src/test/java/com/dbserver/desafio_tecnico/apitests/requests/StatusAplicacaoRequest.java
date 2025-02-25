@@ -18,6 +18,5 @@ public class StatusAplicacaoRequest {
         return given()
                 .when()
                 .get(util.getTEST_URL());
-
     }
 }

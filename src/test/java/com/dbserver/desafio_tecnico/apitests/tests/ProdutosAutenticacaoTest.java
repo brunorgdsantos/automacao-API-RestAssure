@@ -3,13 +3,11 @@ package com.dbserver.desafio_tecnico.apitests.tests;
 import com.dbserver.desafio_tecnico.apitests.requests.BaseUrl;
 import com.dbserver.desafio_tecnico.apitests.requests.ProdutosAutenticacaoRequest;
 import io.qameta.allure.Description;
-import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import static org.hamcrest.Matchers.containsString;
 
 @SpringBootTest
