@@ -46,3 +46,6 @@
 - [Jenkins](https://drive.google.com/file/d/12EtrQ-MfQwShXnY7dpax9NuqT2s143Hc/view?usp=sharing)
 
 <p>É importante destacar que apenas uma das duas opções é suficiente, porém, ambas foram implementadas nesta automação apenas para fins de conhecimento</p>
+
+## Plano de teste e estratégia de testes
+<p>Para o plano de testes teremos como objetivo validar a API de gerenciamento de produtos eletrônicos. Para isso, cobriremos os seus principais endpoints (GET /test, GET /users, POST /auth/login, GET /auth/products, POST /products/add, GET /products, GET /products/{id}), realizando testes nas requests/responses e comparando-as com a documentação, a fim de verificar se estão conforme os requisitos esperados. Inicialmente, utilizaremos o Postman para testes manuais e, posteriormente, adotaremos o RestAssured com JUnit para a execução de testes automáticos. Por último, serão configuradas pipelines para a execução automática dos testes.</p>
