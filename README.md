@@ -33,7 +33,9 @@ Da mesma maneira, foi adicionada uma etapa (job) na pipeline para publicar os re
 - [Relatório](https://brunorgdsantos.gitlab.io/-/db-server-desafio-tecnico-2025/-/jobs/9232825581/artifacts/public/index.html)
 
 - [Job Pipeline](https://gitlab.com/brunorgdsantos/db-server-desafio-tecnico-2025/-/pipelines/1686817908)
-  
+
+A step inicial da pipeline, chamada "test", é responsável por executar todos os testes de automação em um container Docker. A segunda step, denominada "allure report" é responsável por gerar o relatório automático de testes. A etapa final, chamada "allure_report_pages", é responsável por disponibilizar o relatório de testes para visualização no GitLab Pages.
+
 É importante ressaltar que apenas pessoas autorizadas podem visualizar as informações acima, uma vez que o repositório está configurado como privado.
 
 ## Integrações CI
