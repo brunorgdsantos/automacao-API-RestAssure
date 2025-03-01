@@ -1,6 +1,7 @@
 package com.dbserver.desafio_tecnico.apitests.requests;
 
-import com.dbserver.desafio_tecnico.utils.UrlsUtils;
+import com.dbserver.desafio_tecnico.apitests.payloads.dependecy.ICriacaoTokenRequest;
+import com.dbserver.desafio_tecnico.apitests.payloads.dependecy.IUrlsUtils;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +13,10 @@ import static io.restassured.RestAssured.given;
 public class ProdutosAutenticacaoRequest {
 
     @Autowired
-    UrlsUtils util;
+    IUrlsUtils util;
 
     @Autowired
-    CriacaoTokenRequest request;
+    ICriacaoTokenRequest request;
 
     @Step("Buscar produtos com autenticação")
     public Response produtosAutenticacao(){
@@ -25,16 +26,16 @@ public class ProdutosAutenticacaoRequest {
                 .header("Content-Type", "application/json")
                 .header("Authorization", String.format("Bearer %s", accessToken))
                 .when()
-                .get(util.getAUTH_PROD_URL());
+                .get(util.getAuthProdUrl());
     }
 
     @Step("Buscar produtos token expirado")
     public Response produtosAutenticacaoTokenExpired(){
         return given()
                 .header("Content-Type", "application/json")
-                .header("Authorization", String.format("Bearer %s", util.getUNAUTHORIZED_TOKEN()))
+                .header("Authorization", String.format("Bearer %s", util.getUnauthorizedToken()))
                 .when()
-                .get(util.getAUTH_PROD_URL());
+                .get(util.getAuthProdUrl());
     }
 
     @Step("Buscar produtos token inválido")
@@ -43,7 +44,7 @@ public class ProdutosAutenticacaoRequest {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Bearer invalidoTokenTeste")
                 .when()
-                .get(util.getAUTH_PROD_URL());
+                .get(util.getAuthProdUrl());
     }
 
     @Step("Buscar produtos token não enviado")
@@ -52,6 +53,6 @@ public class ProdutosAutenticacaoRequest {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "")
                 .when()
-                .get(util.getAUTH_PROD_URL());
+                .get(util.getAuthProdUrl());
     }
 }

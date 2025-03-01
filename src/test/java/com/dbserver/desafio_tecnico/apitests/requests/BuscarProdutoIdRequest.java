@@ -1,6 +1,6 @@
 package com.dbserver.desafio_tecnico.apitests.requests;
 
-import com.dbserver.desafio_tecnico.utils.UrlsUtils;
+import com.dbserver.desafio_tecnico.apitests.payloads.dependecy.IUrlsUtils;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +9,14 @@ import static io.restassured.RestAssured.given;
 
 @Component
 public class BuscarProdutoIdRequest {
+
     @Autowired
-    UrlsUtils util;
+    IUrlsUtils util;
 
     @Step("Buscar apenas um produto por id")
     public Response buscaProdutosId(int id){
         return given()
                 .when()
-                .get(util.getBUSCA_PROD_ID_URL()+id);
+                .get(util.getBuscaProdIdUrl()+id);
     }
 }

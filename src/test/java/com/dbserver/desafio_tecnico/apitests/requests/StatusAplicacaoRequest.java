@@ -1,6 +1,6 @@
 package com.dbserver.desafio_tecnico.apitests.requests;
 
-import com.dbserver.desafio_tecnico.utils.UrlsUtils;
+import com.dbserver.desafio_tecnico.apitests.payloads.dependecy.IUrlsUtils;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +11,12 @@ import static io.restassured.RestAssured.given;
 public class StatusAplicacaoRequest {
 
     @Autowired
-    UrlsUtils util;
+    IUrlsUtils util;
 
     @Step("Buscar o status da aplicação")
     public Response getStatus(){
         return given()
                 .when()
-                .get(util.getTEST_URL());
+                .get(util.getTestUrl());
     }
 }

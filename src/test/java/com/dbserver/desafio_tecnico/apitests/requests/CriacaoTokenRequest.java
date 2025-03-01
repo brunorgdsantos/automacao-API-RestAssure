@@ -1,7 +1,8 @@
 package com.dbserver.desafio_tecnico.apitests.requests;
 
 import com.dbserver.desafio_tecnico.apitests.payloads.LoginCriacaoTokenPayload;
-import com.dbserver.desafio_tecnico.utils.UrlsUtils;
+import com.dbserver.desafio_tecnico.apitests.payloads.dependecy.ICriacaoTokenRequest;
+import com.dbserver.desafio_tecnico.apitests.payloads.dependecy.IUrlsUtils;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,10 @@ import org.springframework.stereotype.Component;
 import static io.restassured.RestAssured.given;
 
 @Component
-public class CriacaoTokenRequest {
+public class CriacaoTokenRequest implements ICriacaoTokenRequest {
 
     @Autowired
-    UrlsUtils util;
+    IUrlsUtils util;
 
     @Step("Criação de token para Autenticação")
     public Response criarToken(String username, String password){
@@ -20,6 +21,6 @@ public class CriacaoTokenRequest {
                 .header("Content-Type", "application/json")
                 .body(LoginCriacaoTokenPayload.convertToJson(username, password))
                 .when()
-                .post(util.getAUTH_URL());
+                .post(util.getAuthUrl());
     }
 }
