@@ -1,6 +1,6 @@
 <h1 align="center">Testes API Gerenciador Produtos Eletrônicos</h1>
 
-<p>Automação de testes de API criada para o desafio técnico do DBServer</p>
+<p>Automação de testes de API criada para o desafio técnico</p>
 
 ## Tecnologias utilizadas
 - [Java](https://www.java.com/pt-BR/)
